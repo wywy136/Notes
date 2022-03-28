@@ -123,6 +123,27 @@ $$
 dp[i][j]=max(p[j]*dp[i-1][j-1], (1-p[j])*dp[i][j-1])
 $$
 
+### Expotential Sequences
+
+*Given two integers k and n, find the number of possible sequences of length n of positive integers such that each of the next element is greater than or equal to twice of the previous element but less than or equal to k. Should be in O(kn) time.*
+
+> ```
+> Input : k = 10, n = 4
+> Output : 4
+> There should be n elements and value of last element should be at-most k.
+> The sequences are {1, 2, 4, 8}, {1, 2, 4, 9}, {1, 2, 4, 10}, {1, 2, 5, 10}
+> ```
+
+Starting from start, since current state is irrelavant to upcoming states.
+
+Storing optimal solutions: $dp[i,j]$ is the # of sequences of length i with elements less than or equal to j
+
+Recurrence
+$$
+dp[i][j]=dp[i][j-1]+dp[i-1][\frac{j}{2}]
+$$
+Initial state: $dp[i][j]=0$ for $j<2^{(i-1)}, dp[1][j]=1$
+
 ## Leetcode
 
 ### 213 打家劫舍2

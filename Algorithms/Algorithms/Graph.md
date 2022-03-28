@@ -1,6 +1,6 @@
 # Graph
 
-## Basic Operation
+## Search
 
 ### BFS
 
@@ -61,7 +61,7 @@ Dijkstra(G, s):
     v.d = inf
   s.d = 0
   Q = PriorityQueue()  // keyed by v.d
-  Q.insert(s)
+  Q = V
   while Q is not empty:
     u = Extract-min(Q)
     for each v in G.ADJ[u]:
@@ -74,6 +74,16 @@ Relax(u, v, G):
     v.d = u.d + G.w(u, v)
     v.p = u
 ```
+
+Circumstances where Dijkstra fails:
+
+When there is a negative edge (u, v), only the distance of v could be updated to a smaller one when u is extracted out of the queue, assuming v is extracted prior to u. However, any vertex extracted prior to u and reachable from v, could not be updated to have a smaller distance, since there is no way to update them since they are extracted **after v** and they are **not directly connected** with the negative edge. 
+
+For example,
+
+![dijkstra1](../../img/algorithm/dijkstra1.jpeg)
+
+C.d will never be updated as 3-3+2=2, but will be 1+2=3, since updating A.d when visiting B's neighbours has no impact on C.d, which is already set to 3.
 
 ### Bellman-Ford
 
@@ -98,6 +108,10 @@ Bellman-Ford(G, s):
 
 Directed, acyclic
 
+$O(V+E)$
+
+Topology based on DFS - use a stack
+
 ## MST
 
 ### Prim
@@ -112,7 +126,7 @@ Prim(G, r):
     v.visited = False
   r.key = 0
   Q = PriorityQueue()  // keyed by v.key
-  Q.insert(V)
+  Q = V
   while Q is not empty:
     u = Extract-min(Q)
     u.visited = True
@@ -123,6 +137,8 @@ Prim(G, r):
 ```
 
 ### Kruskal
+
+$O(E\lg E+E\lg V)=O(E\lg V)$, observing that $|E|<|V|^2$
 
 ```python
 Kruskal(G, w):
@@ -154,4 +170,29 @@ Union(x, y):
     if x.rank = y.rank:
       y.rank += 1
 ```
+
+## Network Flow
+
+### Build Residual network
+
+```python
+BuildResidualNetwork(G):
+  f = FordFulkerson(G)
+  for u in V:
+    for v in V:
+      cf(u, v) = c(u, v) - f(u, v)
+      cf(v, u) = f(u, v)
+      if cf(u, v) > 0:
+        Er.add((u, v))
+      if cf(v, u) > 0:
+        Er.add((v, u))
+```
+
+### Ford-Fulkerson
+
+$O(E|f|)$, where $f$ is the maximum flow
+
+### Edmonds-Karp
+
+$O(VE^2)$
 

@@ -41,7 +41,7 @@ Minheap-Heapify(A, i):
     minimum = left
   else:
     minimum = i
-  if right <= heapsize(A) and A[left] < A[i]:
+  if right <= heapsize(A) and A[right] < A[i]:
     minimum = right
   if minimum is not i:
     swap(A[i], A[minimum])
