@@ -61,11 +61,12 @@ Dijkstra(G, s):
     v.d = inf
   s.d = 0
   Q = PriorityQueue()  // keyed by v.d
-  Q = V
+  Q = s
   while Q is not empty:
     u = Extract-min(Q)
     for each v in G.ADJ[u]:
       Relax(u, v, G)
+      Insert-min(Q, v)
 ```
 
 ```python
@@ -170,6 +171,10 @@ Union(x, y):
     if x.rank = y.rank:
       y.rank += 1
 ```
+
+## Topological Sort
+
+A reverse order of the postorder traversal. 
 
 ## Network Flow
 

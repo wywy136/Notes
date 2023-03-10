@@ -67,9 +67,9 @@ BERT相比ELMO的优势1. 直接学习双向的表示，而非拼接成的2. 利
 
 ## Transformer
 
-### 模型细节
+![](../../img/Transformer.png)
 
-#### Position Encoding
+### Position Encoding
 
 每个词的位置编码仅仅与模型维度$d_{model}$和当前词的位置pos有关
 $$
@@ -78,7 +78,7 @@ PE(pos,2i+1)=\cos(\frac{pos}{10000^{2i/d_{model}}})
 $$
 PE和word embedding相加而不是拼接，因为这两种都相当于对元素的线性组合，拼接反而会增加参数量
 
-#### Attention为什么要scaled
+### Attention为什么要scaled
 
 - 当x数量级过大时，y=softmax(x)中会给最大值赋予特别大的概率，其他位置几乎为0。这导致$\part y/\part x$很多位置都是0，导致梯度消失
 - 假设q和k是相互独立的随机变量，服从标准正态分布，则qk=$\sum^d_{i=1} q_ik_i$~N(0, d)，所以为了将其标准化，除以$\sqrt d$可使方差变为1

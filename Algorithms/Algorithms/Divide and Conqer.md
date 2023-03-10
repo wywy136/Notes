@@ -17,19 +17,20 @@ Mergesort(A, l, r):
 
 ```python
 Quicksort(A, l, r):
-  p = Partition(A, l, r)
-  QUicksort(A, l, p-1)
-  Quicksort(A, p+1, r)
+    if l < r:
+        p = Partition(A, l, r)
+        QUicksort(A, l, p-1)
+        Quicksort(A, p+1, r)
 ```
 
 ```python
 Partition(A, l, r):
   p = l - 1
-  for i = l to r:
+  for i = l to r - 1:
     if A[i] < A[r]:
       p += 1
       A[i], A[p] = A[p], A[i]
-  A[p], A[r] = A[r], A[p]
+  A[p + 1], A[r] = A[r], A[p + 1]
   return p + 1
 ```
 
