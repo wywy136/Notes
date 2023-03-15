@@ -1,6 +1,118 @@
 # Python Internal
 
+## Sorted Containers
+
+### SortedList
+
+```python
+from sortedcontainers import SortedList
+```
+
+Sorted list is a sorted mutable sequence in which the values are maintained in sorted order. $O(\lg n)$ for insert and delete
+
+- `add(value)` - value could a simple value or a tuple where the first element is used for sorting
+- `discard(value)`
+
+`pop()` returns the last element in O(1), same as traditional lists
+
 ## Built-in Features
+
+### Collections
+
+#### deque
+
+```python
+from collections import deque
+```
+
+Operations:
+
+- `append()`
+- `appendleft()`
+- `pop()`
+- `popleft()`
+
+#### defaultdict
+
+**Defaultdict** is a container like [dictionaries](https://www.geeksforgeeks.org/python-dictionary/) present in the module **collections**. Defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. The functionality of both dictionaries and defaultdict are almost same except for the fact that defaultdict never raises a KeyError. It provides a default value for the key that does not exists.
+
+```python
+from collections import defaultdict
+  
+# Function to return a default
+# values for keys that is not
+# present
+def def_value():
+    return "Not Present"
+      
+# Defining the dict
+d = defaultdict(def_value)
+d["a"] = 1
+d["b"] = 2
+  
+print(d["a"])
+print(d["b"])
+print(d["c"])
+```
+
+`default_factory` could be a function returning the default value for missing key, or any data structure that you hope the dictionary to initiate for every new key.
+
+```python
+from collections import defaultdict
+  
+  
+# Defining a dict
+d = defaultdict(list)
+  
+for i in range(5):
+    d[i].append(i)
+      
+print("Dictionary with values as list:")
+print(d)
+"""
+defaultdict(<class 'list'>, {0: [0], 1: [1], 2: [2], 3: [3], 4: [4]})
+"""
+```
+
+#### Named Tuple
+
+Well, so now what are `namedtuples`? They turn **tuple**s into convenient containers for simple tasks. With **named**tuples you don’t have to use integer indexes for accessing members of a tuple. You can think of namedtuples like dictionaries but unlike dictionaries they are immutable.
+
+```python
+from collections import namedtuple
+
+Animal = namedtuple('Animal', 'name age type')
+perry = Animal(name="perry", age=31, type="cat")
+
+print(perry)
+# Output: Animal(name='perry', age=31, type='cat')
+
+print(perry.name)
+# Output: 'perry'
+```
+
+Moreover, as `namedtuple` instances do not have per-instance dictionaries, they are lightweight and require no more memory than regular tuples. This makes them faster than dictionaries. 
+
+Last but not the least, you can convert a **named****tuple** to a dictionary. Like this:
+
+```python
+from collections import namedtuple
+
+Animal = namedtuple('Animal', 'name age type')
+perry = Animal(name="Perry", age=31, type="cat")
+print(perry._asdict())
+# Output: OrderedDict([('name', 'Perry'), ('age', 31), ...
+```
+
+#### Counter
+
+Return a dict with element frequencies.
+
+### Itertools
+
+#### Permutations and Combinations
+
+https://www.geeksforgeeks.org/permutation-and-combination-in-python/
 
 ### Random
 
@@ -35,21 +147,6 @@ The pop() method can accept either one or two parameters:
 - The name of the key you want to remove (mandatory).
 - The value that should be returned if a key cannot be found (optional).
 
-### Sorted Containers
-
-#### SortedList
-
-```python
-from sortedcontainers import SortedList
-```
-
-Sorted list is a sorted mutable sequence in which the values are maintained in sorted order. $O(\lg n)$ for insert and delete
-
-- `add(value)` - value could a simple value or a tuple where the first element is used for sorting
-- `discard(value)`
-
-`pop()` returns the last element in O(1), same as traditional lists
-
 ### map
 
 Apply a function for each entries in an iterable
@@ -61,7 +158,7 @@ def myfunc(n):
 x = map(myfunc, ('apple', 'banana', 'cherry'))
 ```
 
-### Sorted
+### sorted
 
 #### using sorted with user-defined function
 
@@ -71,6 +168,12 @@ using `cmp_to_key()`
 def compare(x, y): return int(y+x) - int(x+y)
         nums = sorted(map(str, nums), key=cmp_to_key(compare))
 ```
+
+### string
+
+#### ascii_lowercase
+
+In Python3, **`ascii_lowercase `** is a pre-initialized string used as string constant. In Python, string `ascii_lowercase ` will give the lowercase letters ‘abcdefghijklmnopqrstuvwxyz’.
 
 ## Garbage Collector
 
@@ -225,94 +328,6 @@ def fibon(n):
 To access the next element of an iterator, use python's built-in `next()` method.
 
 Str is an interable but not an iterator. To change it into an iterator, use python's built-in `iter()` method.
-
-## Collections
-
-### Deque
-
-```python
-from collections import deque
-```
-
-Operations:
-
-- `append()`
-- `appendleft()`
-- `pop()`
-- `popleft()`
-
-### Default Dict
-
-**Defaultdict** is a container like [dictionaries](https://www.geeksforgeeks.org/python-dictionary/) present in the module **collections**. Defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. The functionality of both dictionaries and defaultdict are almost same except for the fact that defaultdict never raises a KeyError. It provides a default value for the key that does not exists.
-
-```python
-from collections import defaultdict
-  
-  
-# Function to return a default
-# values for keys that is not
-# present
-def def_value():
-    return "Not Present"
-      
-# Defining the dict
-d = defaultdict(def_value)
-d["a"] = 1
-d["b"] = 2
-  
-print(d["a"])
-print(d["b"])
-print(d["c"])
-```
-
-`default_factory` could be a function returning the default value for missing key, or any data structure that you hope the dictionary to initiate for every new key.
-
-```python
-from collections import defaultdict
-  
-  
-# Defining a dict
-d = defaultdict(list)
-  
-for i in range(5):
-    d[i].append(i)
-      
-print("Dictionary with values as list:")
-print(d)
-"""
-defaultdict(<class 'list'>, {0: [0], 1: [1], 2: [2], 3: [3], 4: [4]})
-"""
-```
-
-### Named Tuple
-
-Well, so now what are `namedtuples`? They turn **tuple**s into convenient containers for simple tasks. With **named**tuples you don’t have to use integer indexes for accessing members of a tuple. You can think of namedtuples like dictionaries but unlike dictionaries they are immutable.
-
-```python
-from collections import namedtuple
-
-Animal = namedtuple('Animal', 'name age type')
-perry = Animal(name="perry", age=31, type="cat")
-
-print(perry)
-# Output: Animal(name='perry', age=31, type='cat')
-
-print(perry.name)
-# Output: 'perry'
-```
-
-Moreover, as `namedtuple` instances do not have per-instance dictionaries, they are lightweight and require no more memory than regular tuples. This makes them faster than dictionaries. 
-
-Last but not the least, you can convert a **named****tuple** to a dictionary. Like this:
-
-```python
-from collections import namedtuple
-
-Animal = namedtuple('Animal', 'name age type')
-perry = Animal(name="Perry", age=31, type="cat")
-print(perry._asdict())
-# Output: OrderedDict([('name', 'Perry'), ('age', 31), ...
-```
 
 ## With
 

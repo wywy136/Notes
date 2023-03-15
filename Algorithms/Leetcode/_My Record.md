@@ -30,6 +30,15 @@
 | [921](https://leetcode.cn/problems/minimum-add-to-make-parentheses-valid/solution/921-by-wywy-m-g9p3/) 使括号有效的最少添加 | M     | 20230103 |
 | [379](https://leetcode.cn/problems/design-phone-directory/solution/379-by-wywy-m-pcgg/) 电话目录管理系统 | M     | 20230109 |
 | [856](https://leetcode.cn/problems/score-of-parentheses/solution/856-gua-hao-de-fen-shu-stack-by-ywrx-5and/) 括号的分数 | M     | 20230308 |
+| [844](https://leetcode.cn/problems/backspace-string-compare/solution/844-bi-jiao-han-tui-ge-de-zi-fu-chuan-st-0xc7/) 比较含退格的字符串 | E     | 20230312 |
+
+### Monotonous Stack
+
+| #                                                            | Level | Updated  |
+| ------------------------------------------------------------ | ----- | -------- |
+| [907](https://leetcode.cn/problems/sum-of-subarray-minimums/solution/-by-wywy-m-3zvm/) 子数组的最小值之和 | M     | 20230313 |
+| [2281](https://leetcode.cn/problems/sum-of-total-strength-of-wizards/solution/2281-wu-shi-de-zong-li-liang-he-dan-diao-wnph/) 巫师的总力量和 | H     | 20230313 |
+| [2355](https://leetcode.cn/problems/maximum-number-of-books-you-can-take/solution/2355-ni-neng-na-zou-de-zui-da-tu-shu-shu-4cwe/) 你能拿走的最大图书数量 | H     | 20230314 |
 
 ## Tree
 
@@ -41,12 +50,12 @@
 | 226                                                          | E     | √        |
 | 617                                                          | E     | √        |
 | 112                                                          | E     | √        |
-| 437                                                          | E     | ×        |
-| **572**                                                      | E     | √        |
+| [437](https://leetcode.cn/problems/path-sum-iii/solution/437-lu-jing-zong-he-iiitree-by-ywrx-xmdz/) 路径总和III | M     | 20230314 |
+| 572                                                          | E     | √        |
 | 101                                                          | E     | √        |
 | [111](https://leetcode.cn/problems/minimum-depth-of-binary-tree/solution/111-er-cha-shu-de-zui-xiao-shen-du-tree-eom8f/) 二叉树的最小深度 | E     | 20230220 |
 | 404                                                          | E     | √        |
-| **687**                                                      | E     | √        |
+| 687                                                          | E     | √        |
 | 337                                                          | M     | √        |
 | 671                                                          | E     | √        |
 | 637                                                          | E     | √        |
@@ -135,7 +144,7 @@
 | [1854](https://leetcode.cn/problems/maximum-population-year/solution/-by-wywy-m-frkn/) 人口最多的年份 | E     | 20220917 |
 | [1031](https://leetcode.cn/problems/maximum-sum-of-two-non-overlapping-subarrays/solution/1031-by-wywy-m-a8ru/) 两个非重叠子数组的最大和 | M     | 20220922 |
 | [1124](https://leetcode.cn/problems/longest-well-performing-interval/solution/by-wywy-m-iqfn/) 表现良好的最长时间段 | M     | 20221213 |
-| [907](https://leetcode.cn/problems/sum-of-subarray-minimums/solution/-by-wywy-m-3zvm/) 子数组的最小值之和 | M     | 20221219 |
+| [2222](https://leetcode.cn/problems/number-of-ways-to-select-buildings/solution/2222-xuan-ze-jian-zhu-de-fang-an-shu-qia-x6a5/) 选择建筑的方案数 | M     | 20230315 |
 | [1352](https://leetcode.cn/problems/product-of-the-last-k-numbers/solution/1352-by-wywy-m-94zt/) 最后K个数的乘积 | M     | 20221229 |
 | [1314](https://leetcode.cn/problems/matrix-block-sum/solution/1314-ju-zhen-qu-yu-he-qian-zhui-he-by-wy-wb1q/) 矩阵区域和 | M     | 20221230 |
 | [剑指offer66](https://leetcode.cn/problems/gou-jian-cheng-ji-shu-zu-lcof/solution/-by-wywy-m-prms/) 构建乘积数组 | M     | 20221231 |
@@ -167,8 +176,8 @@
 | [36](https://leetcode.cn/problems/valid-sudoku/solution/by-wywy-m-0al9/) 有效的数独 | M     | 20221010 |
 | [895](https://leetcode.cn/problems/maximum-frequency-stack/solution/895-zui-da-pin-lu-zhan-hash-by-wywy-m-qhin/) 最大频率栈 | H     | 20230212 |
 | [460](https://leetcode.cn/problems/lfu-cache/solution/460-lfuhuan-cun-hash-by-wywy-m-976p/) LFU缓存 | H     | 20230212 |
-|                                                              |       |          |
-|                                                              |       |          |
+| [2405](https://leetcode.cn/problems/optimal-partition-of-string/solution/2405-zi-zi-fu-chuan-de-zui-you-hua-fen-h-f48s/) 子字符串的最优化分 | M     | 20230312 |
+| [1152](https://leetcode.cn/problems/analyze-user-website-visit-pattern/solution/1152-yong-hu-wang-zhan-xing-wei-fen-xi-h-qgxv/) 用户网站行为分析 | M     | 20230314 |
 |                                                              |       |          |
 |                                                              |       |          |
 
@@ -325,6 +334,10 @@
 | [377](https://leetcode.cn/problems/combination-sum-iv/solution/-by-wywy-m-bab9/) 组合总和IV | M     | 20220925 |
 | [32](https://leetcode.cn/problems/longest-valid-parentheses/solution/32-by-wywy-m-b39t/) 最长有效括号 | H     | 20230103 |
 | [718](https://leetcode.cn/problems/maximum-length-of-repeated-subarray/solution/718-zui-chang-zhong-fu-zi-shu-zu-dp-by-y-unfp/) 最长重复子数组 | M     | 20230308 |
+| [2272](https://leetcode.cn/problems/substring-with-largest-variance/solution/2272-zui-da-bo-dong-de-zi-zi-fu-chuan-dp-zai2/) 最大波动的子字符串 | H     | 20230313 |
+| [2355](https://leetcode.cn/problems/maximum-number-of-books-you-can-take/solution/2355-ni-neng-na-zou-de-zui-da-tu-shu-shu-4cwe/) 你能拿走的最大图书数量 | H     | 20230314 |
+|                                                              |       |          |
+|                                                              |       |          |
 
 ## Greedy
 
@@ -339,19 +352,19 @@
 | 605                                                          | E     | √        |
 | 392                                                          | E     | √        |
 | 665                                                          | E     | √        |
-| 53                                                           | E     | √        |
+|                                                              |       |          |
 | 763                                                          | M     | √        |
-| [55](https://leetcode-cn.com/problems/jump-game/solution/55-tiao-yue-you-xi-tan-xin-by-wywy-m-md8h/) 跳跃游戏 | M     | √        |
-| [621](https://leetcode-cn.com/problems/task-scheduler/solution/621-ren-wu-diao-du-qi-tan-xin-by-wywy-m-ytgm/) 任务调度器 | M     | 11.29    |
+| [55](https://leetcode-cn.com/problems/jump-game/solution/55-tiao-yue-you-xi-tan-xin-by-wywy-m-md8h/) 跳跃游戏 | M     | 20230312 |
+| [621](https://leetcode-cn.com/problems/task-scheduler/solution/621-ren-wu-diao-du-qi-tan-xin-by-wywy-m-ytgm/) 任务调度器 | M     | 20230312 |
 | [253](https://leetcode.cn/problems/meeting-rooms-ii/solution/253-hui-yi-shi-iishuang-zhi-zhen-by-wywy-i12o/) 会议室II | M     | 20220911 |
-| [56](https://leetcode-cn.com/problems/merge-intervals/solution/56-he-bing-qu-jian-tan-xin-by-wywy-m-yxvy/) 合并区间 | M     | 11.29    |
-| [12](https://leetcode.cn/problems/integer-to-roman/solution/12-zheng-shu-by-wywy-m-erm7/) 整数转罗马数字 | M     | 7.27     |
+| [56](https://leetcode-cn.com/problems/merge-intervals/solution/56-he-bing-qu-jian-tan-xin-by-wywy-m-yxvy/) 合并区间 | M     | 20221129 |
+| [12](https://leetcode.cn/problems/integer-to-roman/solution/12-zheng-shu-by-wywy-m-erm7/) 整数转罗马数字 | M     | 20220727 |
 | [1029](https://leetcode.cn/problems/two-city-scheduling/solution/by-wywy-m-ou9j/) 两地调度 | M     | 20220911 |
 | [1553](https://leetcode.cn/problems/minimum-number-of-days-to-eat-n-oranges/solution/1553-by-wywy-m-6ict/) 吃掉N个橘子的最少天数 | H     | 20220913 |
 | [768](https://leetcode.cn/problems/max-chunks-to-make-sorted-ii/solution/768-by-wywy-m-aspr/) 最多能完成排序的块II | H     | 20220919 |
 | [134](https://leetcode.cn/problems/gas-station/solution/134-jia-you-zhan-tan-xin-by-wywy-m-vbwp/) 加油站 | M     | 20220924 |
 | [910](https://leetcode.cn/problems/smallest-range-ii/solution/by-wywy-m-0c4m/) 最小差值II | M     | 20221011 |
-| [1775](https://leetcode.cn/problems/equal-sum-arrays-with-minimum-number-of-operations/solution/1775-by-wywy-m-0tst/) 通过最少操作次数使数组的和相等 | M     | 20221013 |
+| [1775](https://leetcode.cn/problems/equal-sum-arrays-with-minimum-number-of-operations/solution/1775-by-wywy-m-0tst/) 通过最少操作次数使数组的和相等 | M     | 20230311 |
 | [1578](https://leetcode.cn/problems/minimum-time-to-make-rope-colorful/solution/1578-by-wywy-m-v6ae/) 使绳子变成彩色的最短时间 | M     | 20221014 |
 | [31](https://leetcode.cn/problems/next-permutation/solution/by-wywy-m-vfts/) 下一个排列 | M     | 20221017 |
 | [45](https://leetcode.cn/problems/jump-game-ii/solution/45-tiao-yue-you-xi-iitan-xin-by-wywy-m-vnxy/) 跳跃游戏II | M     | 20221017 |
@@ -359,6 +372,7 @@
 | [670](https://leetcode.cn/problems/maximum-swap/solution/by-wywy-m-tkhs/) 最大交换 | M     | 20221207 |
 | [1288](https://leetcode.cn/problems/remove-covered-intervals/solution/1288-shan-chu-bei-fu-gai-qu-jian-tan-xin-1vte/) 删除被覆盖区间 | M     | 20230307 |
 | [1024](https://leetcode.cn/problems/video-stitching/solution/1024-shi-pin-pin-jie-tan-xin-by-ywrx-51z5/) 视频拼接 | M     | 20230307 |
+| [1405](https://leetcode.cn/problems/longest-happy-string/solution/1405-zui-chang-kuai-le-zi-fu-chuan-tan-x-rnol/) 最长快乐字符串 | M     | 20230311 |
 
 ## Two-pointer
 
@@ -406,7 +420,7 @@
 | [1514](https://leetcode.cn/problems/path-with-maximum-probability/solution/1514-gai-lu-zui-da-de-lu-jing-dijkstra-b-kh0n/) 概率最大的路径 | M     | 20230216 |
 | [210](https://leetcode.cn/problems/course-schedule-ii/solution/210-ke-cheng-biao-iigraph-by-wywy-m-18nk/) 课程表II | M     | 20230216 |
 | [743](https://leetcode.cn/problems/network-delay-time/solution/743-wang-luo-yan-chi-shi-jian-dijkstra-b-6zyo/) 网络延迟时间 | M     | 20230217 |
-|                                                              |       |          |
+| [1584](https://leetcode.cn/problems/min-cost-to-connect-all-points/solution/1584-lian-jie-suo-you-dian-de-zui-xiao-f-dtmy/) 连接所有点的最小费用 | M     | 20230312 |
 |                                                              |       |          |
 |                                                              |       |          |
 
@@ -451,10 +465,10 @@
 
 | #                                                            | Level | Updated  |
 | ------------------------------------------------------------ | ----- | -------- |
-| [273](https://leetcode-cn.com/problems/integer-to-english-words/solution/273-zheng-shu-zhuan-huan-ying-wen-biao-s-d9es/) 整数转换英文表示 | H     | 11.27    |
+| [273](https://leetcode-cn.com/problems/integer-to-english-words/solution/273-zheng-shu-zhuan-huan-ying-wen-biao-s-d9es/) 整数转换英文表示 | H     | 20211127 |
 |                                                              |       |          |
-| [剑指offer6](https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/solution/by-wywy-m-9kan/) 逆序打印链表 | E     | 6.19     |
-| [剑指offer26](https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/solution/by-wywy-m-2zs3/) | M     | 6.24     |
+| [剑指offer6](https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/solution/by-wywy-m-9kan/) 逆序打印链表 | E     | 20220619 |
+| [剑指offer26](https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/solution/by-wywy-m-2zs3/) | M     | 20220624 |
 | [273](https://leetcode.cn/problems/integer-to-english-words/solution/by-wywy-m-4yer/) 整数转换英文表示 | H     | 20221018 |
 |                                                              |       |          |
 
@@ -484,6 +498,7 @@
 | [22](https://leetcode.cn/problems/generate-parentheses/solution/22-gua-hao-sheng-cheng-hui-su-by-wywy-m-gi92/) 括号生成 | M     | 20230219 |
 | [剑指offer38](https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/solution/jian-zhi-offer38-zi-fu-chuan-de-pai-lie-fkjkr/) 字符串的排列 | M     | 20230219 |
 | [854](https://leetcode.cn/problems/k-similar-strings/solution/854-xiang-si-du-wei-kde-zi-fu-chuan-hui-1epv5/) 相似度为K的字符串 | H     | 20230308 |
+| [2096](https://leetcode.cn/problems/step-by-step-directions-from-a-binary-tree-node-to-another/solution/2096-cong-er-cha-shu-yi-ge-jie-dian-dao-62uqn/) 二叉树一个节点到另一个节点每一步的方向 | M     | 20230309 |
 
 ## Math
 
@@ -507,7 +522,7 @@
 | [389](https://leetcode.cn/problems/random-pick-index/solution/389-sui-ji-shu-suo-yin-shu-xue-by-ywrx-axp9/) 随机数索引 | M    | 20230226 |
 | [391](https://leetcode.cn/problems/perfect-rectangle/solution/391-wan-mei-ju-xing-shu-xue-by-ywrx-nzcb/) 完美矩形 | H    | 20230227 |
 | [面试题 17.09](https://leetcode.cn/problems/get-kth-magic-number-lcci/solution/mian-shi-ti-1709-di-k-ge-shu-shu-xue-by-i0rvw/) 第 k 个数：数学 | M    | 20230308 |
-|                                                              |      |          |
+| [453](https://leetcode.cn/problems/minimum-moves-to-equal-array-elements/solution/453-zui-xiao-cao-zuo-ci-shu-shi-shu-zu-y-jux0/) 最小操作次数使数组元素相等 | M    | 20230312 |
 
 ## Bit Operation
 
@@ -529,6 +544,7 @@
 | 318                                                          | M     |          |
 | [67](https://leetcode-cn.com/problems/add-binary/solution/67-er-jin-zhi-qiu-he-er-jin-zhi-by-wywy-xjbur/) 二进制求和 | E     | 20211128 |
 | [面试题01.01](https://leetcode.cn/problems/is-unique-lcci/solution/pan-ding-zi-fu-shi-fou-wei-yi-bit-by-ywr-3rks/) 判定字符是否唯一 | E     | 20220620 |
+| [1386](https://leetcode.cn/problems/cinema-seat-allocation/solution/1386-an-pai-dian-ying-yuan-zuo-wei-bit-b-l08z/) 安排电影院座位 | M     | 20230311 |
 
 ## Sliding Window
 
@@ -551,7 +567,7 @@
 | [1291](https://leetcode.cn/problems/sequential-digits/solution/1291-by-wywy-m-8twz/) 顺次数 | M     | 20220918 |
 | [463](https://leetcode.cn/problems/island-perimeter/solution/463-by-wywy-m-cc2r/) 岛屿的周长 | E     | 20221020 |
 | [904](https://leetcode.cn/problems/fruit-into-baskets/solution/904-shui-guo-cheng-lan-by-wywy-m-f0m7/) 水果成篮 | M     | 20221207 |
-|                                                              |       |          |
+| [2028](https://leetcode.cn/problems/find-missing-observations/solution/2028-zhao-chu-que-shi-de-guan-ce-shu-ju-wagg4/) 找出缺失的观测数据 | M     | 20230309 |
 |                                                              |       |          |
 
 # OOD
