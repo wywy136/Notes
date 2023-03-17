@@ -6,7 +6,7 @@
 
 #### Python
 
-- **Fluent Python**
+- "Fluent Python"
 
 #### PySpark
 
@@ -16,32 +16,29 @@
 
 - *C Programming*
 - *C++ for Advanced Programmers*
-- **C++ Tutorial**
+- "C++ Tutorial"
 
 #### Go
 
 - *Parallel Programming*
-- Online resources
-
-### OS
-
-#### Basic
-
-- *ICS*
-
-#### Linux
-
-- *Unix*
-- Online resources for Shell programming
+- "The Go Programming Language"
 
 ### Database
 
 #### SQL & NoSQL
 
-- Online courses
 - Leetcode
 
-### System
+### Backend
+
+#### Computer Architecture
+
+- *ICS*
+
+#### Unix
+
+- *Unix*
+- Online resources
 
 #### Cloud Computing
 
@@ -58,6 +55,7 @@
 #### Parallel Programming
 
 - *Parallel Programming*
+- "Parallel Programming with Python"
 
 #### Networking
 
@@ -74,7 +72,12 @@
 
 - Pytorch Tutorial
 - Scikit-learn Tutorial
-- 《Big Data Analysis with Spark》- Spark ML
+- "Big Data Analysis with Spark"
+
+### System Design
+
+- "MACHINE LEARNING DESIGN INTERVIEW"
+- "System Design Interview An Insider’s Guide"
 
 ## Algorithm
 
@@ -84,6 +87,10 @@
 - Leetcode
 
 ### Data Analysis
+
+#### Statistics
+
+- "Introduction to Statistical Learning"
 
 #### Tools
 
@@ -96,7 +103,7 @@
 
 - 西瓜书
 - 葫芦书
-- **Introduction to Statistical Learning**
+- "Introduction to Statistical Learning"
 - *Applied Data Analysis*
 
 #### Deep Learning
@@ -105,6 +112,7 @@
 
 #### NLP
 
+- Project Stories
 - Paper Reading
 
 ## Interview

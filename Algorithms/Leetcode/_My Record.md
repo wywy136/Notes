@@ -135,7 +135,7 @@
 | 565                                                          | M     | √        |
 | [769](https://leetcode.cn/problems/max-chunks-to-make-sorted/solution/-by-wywy-m-i538/) 最多能完成排序的块 | M     | 20220919 |
 | [238](https://leetcode-cn.com/problems/product-of-array-except-self/solution/238-chu-zi-shen-yi-wai-shu-zu-de-cheng-j-rj5x/) 除自身以外数组的乘积 | M     | 1        |
-| [135](https://leetcode-cn.com/problems/candy/solution/135-fen-fa-tang-guo-liang-ci-bian-li-by-kw5ov/) 分发糖果 | H     | 12.21    |
+| [135](https://leetcode-cn.com/problems/candy/solution/135-fen-fa-tang-guo-liang-ci-bian-li-by-kw5ov/) 分发糖果 | H     | 20211229 |
 | [剑指offer04](https://leetcode.cn/problems/er-wei-shu-zu-zhong-de-cha-zhao-lcof/solution/jian-zhi-offer04-by-wywy-m-ywzf/) 二维数组中的查找 | M     | 20220620 |
 | [189](https://leetcode.cn/problems/rotate-array/solution/189-lun-zhuan-shu-zu-by-wywy-m-kqsw/) 轮转数组 | M     | 20220625 |
 | [304](https://leetcode.cn/problems/range-sum-query-2d-immutable/solution/304-by-wywy-m-51e5/) 二维区域和检索-矩阵不可变 | M     | 20220822 |
@@ -178,7 +178,7 @@
 | [460](https://leetcode.cn/problems/lfu-cache/solution/460-lfuhuan-cun-hash-by-wywy-m-976p/) LFU缓存 | H     | 20230212 |
 | [2405](https://leetcode.cn/problems/optimal-partition-of-string/solution/2405-zi-zi-fu-chuan-de-zui-you-hua-fen-h-f48s/) 子字符串的最优化分 | M     | 20230312 |
 | [1152](https://leetcode.cn/problems/analyze-user-website-visit-pattern/solution/1152-yong-hu-wang-zhan-xing-wei-fen-xi-h-qgxv/) 用户网站行为分析 | M     | 20230314 |
-|                                                              |       |          |
+| [2268](https://leetcode.cn/problems/minimum-number-of-keypresses/solution/2268-zui-shao-an-jian-ci-shu-hashmap-by-dowte/) 最少按键次数 | M     | 20230316 |
 |                                                              |       |          |
 
 ## Linked list
@@ -222,7 +222,7 @@
 | [1332](https://leetcode.cn/problems/remove-palindromic-subsequences/solution/1332-by-wywy-m-poch/) 删除回文子序列 | E     | 20220913 |
 | [1790](https://leetcode.cn/problems/check-if-one-string-swap-can-make-strings-equal/solution/-by-wywy-m-d8pw/) 仅执行一次字符串交换能否使两个字符串相等 | E     | 20220917 |
 | [722](https://leetcode.cn/problems/remove-comments/solution/by-wywy-m-ht1s/) 删除注释 | M     | 20220922 |
-|                                                              |       |          |
+| [1653](https://leetcode.cn/problems/minimum-deletions-to-make-string-balanced/solution/1653-shi-zi-fu-chuan-ping-heng-de-zui-sh-2f0h/) 使字符串平衡的最少删除次数 | M     | 20230317 |
 
 ## Heap
 
@@ -233,7 +233,7 @@
 | [1845](https://leetcode.cn/problems/seat-reservation-manager/solution/1845-by-wywy-m-dlyv/) 座位预约管理系统 | M     | 20230109 |
 | [703](https://leetcode.cn/problems/kth-largest-element-in-a-stream/solution/703-shu-ju-liu-zhong-de-di-by-wywy-m-nxnu/) 数据流中的第K大元素 | E     | 20230110 |
 | [295](https://leetcode.cn/problems/find-median-from-data-stream/solution/-by-wywy-m-1paq/) 数据流的中位数 | H     | 20230110 |
-|                                                              |       |          |
+| [2398](https://leetcode.cn/problems/maximum-number-of-robots-within-budget/solution/2398-yu-suan-nei-de-zui-duo-ji-qi-ren-sh-c2r7/) 预算内的最多机器人数目 | H     | 20230316 |
 
 # Algorithm
 
@@ -352,7 +352,7 @@
 | 605                                                          | E     | √        |
 | 392                                                          | E     | √        |
 | 665                                                          | E     | √        |
-|                                                              |       |          |
+| [1647](https://leetcode.cn/problems/minimum-deletions-to-make-character-frequencies-unique/solution/1647-zi-fu-pin-ci-wei-yi-de-zui-xiao-sha-rg54/) 字符频次唯一的最小删除次数 | M     | 20230317 |
 | 763                                                          | M     | √        |
 | [55](https://leetcode-cn.com/problems/jump-game/solution/55-tiao-yue-you-xi-tan-xin-by-wywy-m-md8h/) 跳跃游戏 | M     | 20230312 |
 | [621](https://leetcode-cn.com/problems/task-scheduler/solution/621-ren-wu-diao-du-qi-tan-xin-by-wywy-m-ytgm/) 任务调度器 | M     | 20230312 |
@@ -568,7 +568,7 @@
 | [463](https://leetcode.cn/problems/island-perimeter/solution/463-by-wywy-m-cc2r/) 岛屿的周长 | E     | 20221020 |
 | [904](https://leetcode.cn/problems/fruit-into-baskets/solution/904-shui-guo-cheng-lan-by-wywy-m-f0m7/) 水果成篮 | M     | 20221207 |
 | [2028](https://leetcode.cn/problems/find-missing-observations/solution/2028-zhao-chu-que-shi-de-guan-ce-shu-ju-wagg4/) 找出缺失的观测数据 | M     | 20230309 |
-|                                                              |       |          |
+| [1304](https://leetcode.cn/problems/find-n-unique-integers-sum-up-to-zero/solution/1304-he-wei-ling-de-n-ge-bu-tong-zheng-s-oi7x/) 和为零的 N 个不同整数 | E     | 20230317 |
 
 # OOD
 

@@ -1,4 +1,4 @@
-# C Programming Basis
+# C Programming
 
 ## Lib Funcs
 
