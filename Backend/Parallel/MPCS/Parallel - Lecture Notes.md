@@ -1,5 +1,13 @@
 # Lecture Notes
 
+## Projects
+
+https://github.com/mpcs52060-aut22/proj1-wywy136
+
+https://github.com/mpcs52060-aut22/project-2-wywy136
+
+https://github.com/mpcs52060-aut22/proj3-wywy136
+
 ## Shared memory Architectures
 
 ### Instruction Parallelism
