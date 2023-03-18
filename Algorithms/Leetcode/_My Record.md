@@ -25,7 +25,7 @@
 | [71](https://leetcode.cn/problems/simplify-path/solution/71-jian-hua-lu-jing-by-wywy-m-tfon/) 简化路径 | M     | 20220925 |
 | [227](https://leetcode.cn/problems/basic-calculator-ii/solution/227-by-wywy-m-c9pw/) 基本计算器II | H     | 20221018 |
 | [1124](https://leetcode.cn/problems/longest-well-performing-interval/solution/by-wywy-m-iqfn/) 表现良好的最长时间段 | M     | 20221213 |
-| [150](https://leetcode.cn/problems/evaluate-reverse-polish-notation/solution/150-by-wywy-m-mard/) 逆波兰表达式求值： | M     | 20230103 |
+| [150](https://leetcode.cn/problems/evaluate-reverse-polish-notation/solution/150-by-wywy-m-mard/) 逆波兰表达式求值 | M     | 20230103 |
 | [1541](https://leetcode.cn/problems/minimum-insertions-to-balance-a-parentheses-string/solution/-by-wywy-m-4zuq/) 平衡括号字符串的最少插入次数 | M     | 20230103 |
 | [921](https://leetcode.cn/problems/minimum-add-to-make-parentheses-valid/solution/921-by-wywy-m-g9p3/) 使括号有效的最少添加 | M     | 20230103 |
 | [379](https://leetcode.cn/problems/design-phone-directory/solution/379-by-wywy-m-pcgg/) 电话目录管理系统 | M     | 20230109 |
@@ -111,7 +111,7 @@
 | [230](https://leetcode.cn/problems/kth-smallest-element-in-a-bst/solution/by-wywy-m-x4wx/) 二叉搜索树中第K小的元素 | M     | 20220825 |
 | [98](https://leetcode.cn/problems/validate-binary-search-tree/solution/by-wywy-m-fzr7/) 验证二叉搜索树 | M     | 20220921 |
 | [95](https://leetcode.cn/problems/unique-binary-search-trees-ii/solution/95-bu-tong-de-er-cha-sou-suo-shu-iibst-b-iim2/) 不同的二叉搜索树 II | M     | 20230216 |
-|                                                              |       |          |
+| [510](https://leetcode.cn/problems/inorder-successor-in-bst-ii/solution/510-er-cha-sou-suo-shu-zhong-de-zhong-xu-7g4f/) 二叉搜索树中的中序后继II | M     | 20230318 |
 
 ## Array and matrix
 
@@ -179,7 +179,7 @@
 | [2405](https://leetcode.cn/problems/optimal-partition-of-string/solution/2405-zi-zi-fu-chuan-de-zui-you-hua-fen-h-f48s/) 子字符串的最优化分 | M     | 20230312 |
 | [1152](https://leetcode.cn/problems/analyze-user-website-visit-pattern/solution/1152-yong-hu-wang-zhan-xing-wei-fen-xi-h-qgxv/) 用户网站行为分析 | M     | 20230314 |
 | [2268](https://leetcode.cn/problems/minimum-number-of-keypresses/solution/2268-zui-shao-an-jian-ci-shu-hashmap-by-dowte/) 最少按键次数 | M     | 20230316 |
-|                                                              |       |          |
+| [1615](https://leetcode.cn/problems/maximal-network-rank/solution/1615-zui-da-wang-luo-zhi-hash-by-ywrx-xbkk/) 最大网络秩 | M     | 20230318 |
 
 ## Linked list
 
@@ -365,7 +365,7 @@
 | [134](https://leetcode.cn/problems/gas-station/solution/134-jia-you-zhan-tan-xin-by-wywy-m-vbwp/) 加油站 | M     | 20220924 |
 | [910](https://leetcode.cn/problems/smallest-range-ii/solution/by-wywy-m-0c4m/) 最小差值II | M     | 20221011 |
 | [1775](https://leetcode.cn/problems/equal-sum-arrays-with-minimum-number-of-operations/solution/1775-by-wywy-m-0tst/) 通过最少操作次数使数组的和相等 | M     | 20230311 |
-| [1578](https://leetcode.cn/problems/minimum-time-to-make-rope-colorful/solution/1578-by-wywy-m-v6ae/) 使绳子变成彩色的最短时间 | M     | 20221014 |
+| [1578](https://leetcode.cn/problems/minimum-time-to-make-rope-colorful/solution/1578-by-wywy-m-v6ae/) 使绳子变成彩色的最短时间 | M     | 20230318 |
 | [31](https://leetcode.cn/problems/next-permutation/solution/by-wywy-m-vfts/) 下一个排列 | M     | 20221017 |
 | [45](https://leetcode.cn/problems/jump-game-ii/solution/45-tiao-yue-you-xi-iitan-xin-by-wywy-m-vnxy/) 跳跃游戏II | M     | 20221017 |
 | [945](https://leetcode.cn/problems/minimum-increment-to-make-array-unique/solution/-by-wywy-m-72hf/) 使数组唯一的最小增量 | M     | 20221019 |
@@ -580,7 +580,7 @@
 | [1244](https://leetcode.cn/problems/design-a-leaderboard/solution/1244-li-kou-by-wywy-m-o2it/) 力扣排行榜 | M     | 20220911 |
 | [1472](https://leetcode.cn/problems/design-browser-history/solution/-by-wywy-m-brat/) 设计浏览器历史记录 | M     | 20220911 |
 | [716](https://leetcode.cn/problems/max-stack/solution/716-zui-da-zhan-by-wywy-m-pfny/) 最大栈 | H     | 20220913 |
-| [146](https://leetcode-cn.com/problems/lru-cache/solution/146-lru-by-wywy-m-zu1k/) LRU | M     | 20220913 |
+| [146](https://leetcode-cn.com/problems/lru-cache/solution/146-lru-by-wywy-m-zu1k/) LRU | M     | 20230318 |
 | [341](https://leetcode.cn/problems/flatten-nested-list-iterator/solution/341-bian-ping-hua-qian-tao-lie-biao-die-9hkzc/) 扁平化嵌套列表迭代器 | M     | 20230212 |
-|                                                              |       |          |
+| [460](https://leetcode.cn/problems/lfu-cache/solution/460-lfuhuan-cun-hash-by-wywy-m-976p/) LFU | H     | 20230212 |
 
