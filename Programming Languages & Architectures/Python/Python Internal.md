@@ -1,5 +1,15 @@
 # Python Internal
 
+## Inner Functions
+
+### `repr()`
+
+Use `repr()` to get a nice string representing each argument. `[repr(a) for a in args]`.
+
+### `ord()`
+
+Get ascii value of a char.
+
 ## Sorted Containers
 
 ### SortedList
@@ -16,6 +26,8 @@ Sorted list is a sorted mutable sequence in which the values are maintained in s
 `pop()` returns the last element in O(1), same as traditional lists
 
 ## Built-in Features
+
+### 
 
 ### Collections
 
@@ -215,34 +227,231 @@ For each generation, the garbage collector module has a threshold number of obje
 
 ## Decorator
 
+https://realpython.com/primer-on-python-decorators/
+
 Decorators let you execute code before and after a function.
 
-Function as a decorator:
+### Basic
+
+#### Simple decorator
 
 ```python
-from functools import wraps
-def decorator_name(f):
-    @wraps(f)
-    def decorated(*args, **kwargs):
-        if not can_run:
-            return "Function will not run"
-        return f(*args, **kwargs)
-    return decorated
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
 
-@decorator_name
-def func():
-    return("Function is running")
+def say_whee():
+    print("Whee!")
 
-can_run = True
-print(func())
-# Output: Function is running
-
-can_run = False
-print(func())
-# Output: Function will not run
+say_whee = my_decorator(say_whee)
 ```
 
-Class as a decorator:
+#### Using the Syntactic Sugar
+
+```python
+def my_decorator(func):
+    def wrapper():
+        print("Something is happening before the function is called.")
+        func()
+        print("Something is happening after the function is called.")
+    return wrapper
+
+@my_decorator
+def say_whee():
+    print("Whee!")
+```
+
+#### With parameters
+
+```python
+def do_twice(func):
+    def wrapper_do_twice(*args, **kwargs):
+        func(*args, **kwargs)
+        func(*args, **kwargs)
+    return wrapper_do_twice
+
+@do_twice
+def greet(name):
+    print(f"Hello {name}")
+```
+
+#### Returning values
+
+Make sure the wrapper function returns the return value of the decorated function.
+
+```python
+def do_twice(func):
+    def wrapper_do_twice(*args, **kwargs):
+        func(*args, **kwargs)
+        return func(*args, **kwargs)
+    return wrapper_do_twice
+
+@do_twice
+def return_greeting(name):
+    print("Creating greeting")
+    return f"Hi {name}"
+
+hi_adam = return_greeting("Adam")
+```
+
+#### Identifying
+
+Decorators should use the [`@functools.wraps`](https://docs.python.org/library/functools.html#functools.wraps) decorator, which will preserve information about the original function.
+
+```python
+import functools
+
+def do_twice(func):
+    @functools.wraps(func)
+    def wrapper_do_twice(*args, **kwargs):
+        func(*args, **kwargs)
+        return func(*args, **kwargs)
+    return wrapper_do_twice
+
+>>> say_whee.__name__
+'say_whee'
+```
+
+### Simple Boilerplate
+
+```python
+import functools
+
+def decorator(func):
+    @functools.wraps(func)
+    def wrapper_decorator(*args, **kwargs):
+        # Do something before
+        value = func(*args, **kwargs)
+        # Do something after
+        return value
+    return wrapper_decorator
+```
+
+### Real World Examples
+
+#### Timing Functions
+
+```python
+import functools
+import time
+
+def timer(func):
+    """Print the runtime of the decorated function"""
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.perf_counter()    # 1
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()      # 2
+        run_time = end_time - start_time    # 3
+        print(f"Finished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+    return wrapper_timer
+
+@timer
+def waste_some_time(num_times):
+    for _ in range(num_times):
+        sum([i**2 for i in range(10000)])
+```
+
+#### Debugging Code
+
+```python
+import functools
+
+def debug(func):
+    """Print the function signature and return value"""
+    @functools.wraps(func)
+    def wrapper_debug(*args, **kwargs):
+        args_repr = [repr(a) for a in args]                      # 1
+        kwargs_repr = [f"{k}={v!r}" for k, v in kwargs.items()]  # 2
+        signature = ", ".join(args_repr + kwargs_repr)           # 3
+        print(f"Calling {func.__name__}({signature})")
+        value = func(*args, **kwargs)
+        print(f"{func.__name__!r} returned {value!r}")           # 4
+        return value
+    return wrapper_debug
+
+@debug
+def make_greeting(name, age=None):
+    if age is None:
+        return f"Howdy {name}!"
+    else:
+        return f"Whoa {name}! {age} already, you are growing up!"
+```
+
+#### Applying a decorator to a function that has already been defined
+
+```python
+import math
+from decorators import debug
+
+# Apply a decorator to a standard library function
+math.factorial = debug(math.factorial)
+```
+
+#### Slow Down Code
+
+Why would you want to slow down your Python code? Probably the most common use case is that you want to rate-limit a function that continuously checks whether a resource—like a web page—has changed. The `@slow_down` decorator will sleep one second before it calls the decorated function:
+
+```python
+import functools
+import time
+
+def slow_down(func):
+    """Sleep 1 second before calling the function"""
+    @functools.wraps(func)
+    def wrapper_slow_down(*args, **kwargs):
+        time.sleep(1)
+        return func(*args, **kwargs)
+    return wrapper_slow_down
+
+@slow_down
+def countdown(from_number):
+    if from_number < 1:
+        print("Liftoff!")
+    else:
+        print(from_number)
+        countdown(from_number - 1)
+```
+
+#### With Flask
+
+```python
+from flask import Flask, g, request, redirect, url_for
+import functools
+app = Flask(__name__)
+
+def login_required(func):
+    """Make sure user is logged in before proceeding"""
+    @functools.wraps(func)
+    def wrapper_login_required(*args, **kwargs):
+        if g.user is None:
+            return redirect(url_for("login", next=request.url))
+        return func(*args, **kwargs)
+    return wrapper_login_required
+
+@app.route("/secret")
+@login_required
+def secret():
+    ...
+```
+
+While this gives an idea about how to add authentication to your web framework, you should usually not write these types of decorators yourself. For Flask, you can use [the Flask-Login extension](https://flask-login.readthedocs.io/en/latest/#flask_login.login_required) instead, which adds more security and functionality. 
+
+### Decorating Class
+
+#### Decorating class methods
+
+The first way to decorate a class is to decorate the methods of a class. Some commonly used built-in decorators are:
+
+- `@classmethod`
+- `@staticmethod`
+- `@property`
+
+The `@classmethod` and `@staticmethod` decorators are used to define methods inside a class [namespace](https://realpython.com/python-namespaces-scope/) that are not connected to a particular instance of that class. The `@property` decorator is used to customize [getters and setters](hhttps://realpython.com/python-getter-setter/) for class attributes.
 
 ```python
 class logit(object):
@@ -299,11 +508,62 @@ class email_logit(logit):
         pass
 ```
 
+#### Decorating the whole class
+
+For example,
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class PlayingCard:
+    rank: str
+    suit: str
+```
+
+Decorating a class does not decorate its methods. 
+
+### Decorators With Arguments
+
+Add another layer of inner function. The outermost function returns a reference to the decorator function.
+
+```python
+def repeat(num_times):
+    def decorator_repeat(func):
+        @functools.wraps(func)
+        def wrapper_repeat(*args, **kwargs):
+            for _ in range(num_times):
+                value = func(*args, **kwargs)
+            return value
+        return wrapper_repeat
+    return decorator_repeat
+
+@repeat(num_times=4)
+def greet(name):
+    print(f"Hello {name}")
+```
+
+- Defining `decorator_repeat()` as an inner function means that `repeat()` will refer to a function object—`decorator_repeat`. Earlier, we used `repeat` without parentheses to refer to the function object. The added parentheses are necessary when defining decorators that take arguments.
+- The `num_times` argument is seemingly not used in `repeat()` itself. But by passing `num_times` a [closure](https://realpython.com/inner-functions-what-are-they-good-for/) is created where the value of `num_times` is stored until it will be used later by `wrapper_repeat()`.
+
+### Cache decorator
+
+`cache` is a decorator that helps in reducing function execution for the same inputs using the memoization technique. The function returns the same value as `lru_cache(maxsize=None)`, where the cache grows indefinitely without evicting old values. The decorator creates a thin wrapper around a dictionary lookup for the function arguments.
+
+```python
+from functools import cache
+import time
+
+@cache
+def factorial_with_cache(num):
+    return num * factorial_with_cache(num-1) if num else 1
+```
+
 ## Class
 
 ### Magic Methods
 
-Implementing **getitem** in a class allows its instances to use the [] (indexer) operator. 
+Implementing `__getitem__` in a class allows its instances to use the [] (indexer) operator. 
 
 ## Generator
 
@@ -331,7 +591,7 @@ Str is an interable but not an iterator. To change it into an iterator, use pyth
 
 ## With
 
-**`with`** statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common resources like file streams. 
+Context manager. **`with`** statement in Python is used in exception handling to make the code cleaner and much more readable. It simplifies the management of common resources like file streams. 
 
 ```python
 # 1) without using with statement
@@ -354,7 +614,7 @@ with open('file_path', 'w') as file:
 
 Using with statement, no need to call `file.close()`. The `with` statement itself ensures proper acquisition and release of resources, even there is an exception running `file.write()`.
 
-### User defined objects supporting "with"
+### User defined objects supporting "`with`
 
 To use `with` statement in user defined objects you only need to add the methods `__enter__()` and `__exit__()` in the object methods. 
 
@@ -376,7 +636,13 @@ with MessageWriter('my_file.txt') as xfile:
     xfile.write('hello world')
 ```
 
-## Copy
+### Using `with` Parallel Programming
+
+Refer to "Python Parallel Programming".
+
+## Miscellaneous
+
+### Copy
 
 By assignment: not a copy but a reference. Changes to the original list will result into changes in the new list.
 
@@ -384,73 +650,6 @@ Shallow copy: new list, but inner lists are bound the original list.
 
 Deep copy: totally new list without any dependency
 
-## Argument passing
+### Argument passing
 
 DIfference between immutable arguments and mutable arguments.
-
-## Multithreading, Multiprocessing
-
-### Multithreading
-
-Threading is game-changing because many scripts related to network/data I/O spend the majority of their time waiting for data from a remote source. Because downloads might not be linked (i.e., scraping separate websites), the processor can download from different data sources in parallel and combine the result at the end. For CPU intensive processes, there is little benefit to using the threading module.
-
-```python
-def testThread(num):
-    print(num)
-
-if __name__ == '__main__':
-    for i in range(5):
-        t = threading.Thread(target=testThread, arg=(i,))
-        t.start()
-```
-
-#### Thread-safe queue
-
-```python
-from threading import Thread
-from queue import Queue
- 
-# add items to the list
-def add_items(safe_list):
-    for i in range(100000):
-        safe_list.put(i)
- 
-# create the thread safe list (queue)
-safe_list = Queue()
-# configure threads to add to the list
-threads = [Thread(target=add_items, args=(safe_list,)) for i in range(10)]
-# start threads
-for thread in threads:
-    thread.start()
-# wait for all threads to terminate
-print('Main waiting for threads...')
-for thread in threads:
-    thread.join()
-# report the number of items in the list
-print(f'List size: {safe_list.qsize()}')
-```
-
-### GIL
-
-GIL is necessary because Python is not thread-safe and there is a globally enforced lock when accessing a Python object. Though not perfect, it's a pretty effective mechanism for memory management. 
-
-GIL 会使得多线程在执行时只有IO操作时多线程并发的，计算时还是单线程依次执行
-
-GIL会在IO 时释放，计算时上锁
-
-### Multiprocessing
-
-Since the processes don't share memory, they can't modify the same memory concurrently.
-
-```python
-import multiprocessing
-def spawn():
-    print('test!')
-
-if __name__ == '__main__':
-    for i in range(5):
-        p = multiprocessing.Process(target=spawn)
-        p.start()
-        p.join()
-```
-
