@@ -1,6 +1,6 @@
 # Python Internal
 
-## Inner Functions
+## Inner Functions/Data Structures
 
 ### `repr()`
 
@@ -9,6 +9,51 @@ Use `repr()` to get a nice string representing each argument. `[repr(a) for a in
 ### `ord()`
 
 Get ascii value of a char.
+
+### Dict
+
+The key-value pairs are maintained **in order** in python dict. This makes a dict like a stack.
+
+#### Pop the last key-value pair
+
+```python
+key, value = dictionary.popitem()
+```
+
+#### Delete a key
+
+```scss
+dictionary.pop(key_to_remove, not_found)
+```
+
+The pop() method can accept either one or two parameters:
+
+- The name of the key you want to remove (mandatory).
+- The value that should be returned if a key cannot be found (optional).
+
+### `map`
+
+Apply a function for each entries in an iterable
+
+```python
+def myfunc(n):
+  return len(n)
+
+x = map(myfunc, ('apple', 'banana', 'cherry'))
+```
+
+### `sorted`
+
+#### using sorted with user-defined function
+
+using `cmp_to_key()`
+
+```python
+def compare(x, y): return int(y+x) - int(x+y)
+nums = sorted(map(str, nums), key=cmp_to_key(compare))
+```
+
+
 
 ## Sorted Containers
 
@@ -27,11 +72,15 @@ Sorted list is a sorted mutable sequence in which the values are maintained in s
 
 ## Built-in Features
 
-### 
+### `bisect`
 
-### Collections
+- `bisect.bisect_left()`: Locate the insertion point for *x* in *a* to maintain sorted order. The returned insertion point *i* partitions the array *a* into two halves so that `all(val < x for val in a[lo : i])` for the left side and `all(val >= x for val in a[i : hi])` for the right side.
+- `bisect.bisect_right()`
+- `bisect.insort_left()`: Insert *x* in *a* in sorted order. This function first runs [`bisect_left()`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left) to locate an insertion point. Next, it runs the `insert()` method on *a* to insert *x* at the appropriate position to maintain sort order. Keep in mind that the `O(log n)` search is dominated by the slow `O(n)` insertion step.
 
-#### deque
+### `collections`
+
+#### `deque`
 
 ```python
 from collections import deque
@@ -44,7 +93,7 @@ Operations:
 - `pop()`
 - `popleft()`
 
-#### defaultdict
+#### `defaultdict`
 
 **Defaultdict** is a container like [dictionaries](https://www.geeksforgeeks.org/python-dictionary/) present in the module **collections**. Defaultdict is a sub-class of the dictionary class that returns a dictionary-like object. The functionality of both dictionaries and defaultdict are almost same except for the fact that defaultdict never raises a KeyError. It provides a default value for the key that does not exists.
 
@@ -86,7 +135,7 @@ defaultdict(<class 'list'>, {0: [0], 1: [1], 2: [2], 3: [3], 4: [4]})
 """
 ```
 
-#### Named Tuple
+#### `namedtuple`
 
 Well, so now what are `namedtuples`? They turn **tuple**s into convenient containers for simple tasks. With **named**tuples you don’t have to use integer indexes for accessing members of a tuple. You can think of namedtuples like dictionaries but unlike dictionaries they are immutable.
 
@@ -116,19 +165,19 @@ print(perry._asdict())
 # Output: OrderedDict([('name', 'Perry'), ('age', 31), ...
 ```
 
-#### Counter
+#### `counter`
 
 Return a dict with element frequencies.
 
-### Itertools
+### `itertools`
 
 #### Permutations and Combinations
 
 https://www.geeksforgeeks.org/permutation-and-combination-in-python/
 
-### Random
+### `random`
 
-#### Choice 
+#### `choice `
 
 The `random.choice()` method returns a randomly selected element from the specified sequence.
 
@@ -138,54 +187,29 @@ mylist = ["apple", "banana", "cherry"]
 print(random.choice(mylist))
 ```
 
-### Dict
+### `string`
 
-The key-value pairs are maintained **in order** in python dict. This makes a dict like a stack.
-
-#### Pop the last key-value pair
-
-```python
-key, value = dictionary.popitem()
-```
-
-#### Delete a key
-
-```scss
-dictionary.pop(key_to_remove, not_found)
-```
-
-The pop() method can accept either one or two parameters:
-
-- The name of the key you want to remove (mandatory).
-- The value that should be returned if a key cannot be found (optional).
-
-### map
-
-Apply a function for each entries in an iterable
-
-```python
-def myfunc(n):
-  return len(n)
-
-x = map(myfunc, ('apple', 'banana', 'cherry'))
-```
-
-### sorted
-
-#### using sorted with user-defined function
-
-using `cmp_to_key()`
-
-```python
-def compare(x, y): return int(y+x) - int(x+y)
-        nums = sorted(map(str, nums), key=cmp_to_key(compare))
-```
-
-### string
-
-#### ascii_lowercase
+#### `ascii_lowercase`
 
 In Python3, **`ascii_lowercase `** is a pre-initialized string used as string constant. In Python, string `ascii_lowercase ` will give the lowercase letters ‘abcdefghijklmnopqrstuvwxyz’.
+
+### `queue`
+
+A synchronized class of queue supporting parallel programming.
+
+#### `PriorityQueue`
+
+```python
+from queue import PriorityQueue
+customers = PriorityQueue()
+customers.put((2, "Harry"))
+customers.put((3, "Charles"))
+customers.put((1, "Riya"))
+customers.put((4, "Stacy"))
+while customers:
+     print(customers.get())
+# Riya Harry Charles Stacy
+```
 
 ## Garbage Collector
 

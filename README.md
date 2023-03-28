@@ -2,15 +2,26 @@
 
 ## Engineering
 
-### Prorgamming Languages
+### Tools
+
+#### Shell
+
+- *Unix*
+- [MIT Missing Semester](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
+
+#### Vim
+
+- [MIT Missing Semester](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
+
+#### Git
+
+- [MIT Missing Semester](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J)
+
+### Programming Languages
 
 #### Python
 
 - "Fluent Python"
-
-#### PySpark
-
-- *Big Data Platform*
 
 #### C/C++
 
@@ -38,7 +49,6 @@
 #### Unix
 
 - *Unix*
-- Online resources
 
 #### Cloud Computing
 
@@ -67,17 +77,19 @@
 #### Big Data
 
 - *Big Data Application Architecture*
+- *Big Data Platform*
+- PySpark Tutorial
 
 #### ML
 
 - Pytorch Tutorial
 - Scikit-learn Tutorial
-- "Big Data Analysis with Spark"
 
 ### System Design
 
 - "MACHINE LEARNING DESIGN INTERVIEW"
 - "System Design Interview An Insider’s Guide"
+- [System Design](https://www.youtube.com/playlist?list=PLMCXHnjXnTnvo6alSjVkgxV-VH6EPyvoX)
 
 ## Algorithm
 
@@ -99,21 +111,23 @@
 
 ### Machine Learning
 
-#### Statistical
+#### ML/DL/RL
 
+- *Applied Data Analysis*
 - 西瓜书
 - 葫芦书
 - "Introduction to Statistical Learning"
-- *Applied Data Analysis*
-
-#### Deep Learning
-
+- CS229
+- [ML Glossary](https://ml-cheatsheet.readthedocs.io/en/latest/index.html)
+- "Python Machine Learning"
 - 花书
+- AI全栈手册
 
 #### NLP
 
-- Project Stories
-- Paper Reading
+- "Natural Language Processing with Transformers"
+- Projects
+- Papers
 
 ## Interview
 

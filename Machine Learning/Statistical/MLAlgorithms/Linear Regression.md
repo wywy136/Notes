@@ -1,6 +1,8 @@
 # Linear Regression
 
-## Variance-Bias Tradeoff
+## Theory
+
+### Variance-Bias Tradeoff
 
 Low MSE = Low Variance + Low Bias
 
@@ -9,23 +11,24 @@ Low MSE = Low Variance + Low Bias
 
 Generally, as flexibility increases, variance will increase and bias will decrease.
 
-## Equation
+### Parameters Updating
 
 $$
 \theta_j \leftarrow \theta_j + \alpha(y^{(i)}-h_\theta(x^{(i)})x^{(i)}_j
 $$
-## Batch Gradient Descent
+## Pseudo Code
 
 ```python
 LinearRegression(epoch, learning_rate, X, Y, feature_size, epsilon):
-    thetas[feature_size] = 0
+    thetas[feature_size + 1] = 0
     for i = 1 to epoch:
-        grads[feature_size] = 0
+        grads[feature_size + 1] = 0
         for j = 1 to X.size:
             for k = 1 to featuer_size:
                 grads[k] += X[j][k] * (Y[j] - Hypo(thetas, X[j], feature_size))
-        for j = 1 to feature_size:
-            thetas[j] = thetas[j] - grads[j]
+            grads[k + 1] += Y[j] - Hypo(thetas, X[j], feature_size)
+        for k = 1 to feature_size + 1:
+            thetas[k] += learning_rate * grads[k] / X.size
         if Norm(grads) < epsilon:
             break
     return thetas
