@@ -1,14 +1,8 @@
 # Shell Scripting
 
-## Basic syntax
+Source: MPCS Unix Course & MIT Missing Semester
 
-### Interpreter
-
-```shell
-#!/bin/bash
-```
-
-### Running a shell script
+## Running a shell script
 
 ```
 chmod u+x <file>.sh
@@ -17,6 +11,21 @@ chmod u+x <file>.sh
 bash <file>.sh
 
 source <file>.sh
+```
+
+## Basic Syntax
+
+### Interpreter
+
+```shell
+#!/path/to/bash
+#!/path/to/path
+```
+
+For python recommended
+
+```
+#!/usr/bin/env python
 ```
 
 ### Shell variables
@@ -32,7 +41,9 @@ echo "He is $AGE years old"
 
 Using an undeclared variable meanas an empty value is used
 
-When storing a multi-word string, must use quotes
+When storing a multi-word string, must use quotes。
+
+- Only double quotes will replace the `$` to its value. Not working for single quote.
 
 ### Capture command output
 
@@ -40,14 +51,6 @@ When storing a multi-word string, must use quotes
 LS=$(ls *.txt)
 echo $LS
 ```
-
-### Command-line arguments
-
-$0: script name
-
-$1, ..., \$9: arguments
-
-$#: number of arguments
 
 ### For loop
 
@@ -59,7 +62,7 @@ done
 
 ### If-else
 
-Must be spaces as show
+Must be spaced as shown:
 
 ```shell
 if [ <test> ]; then
@@ -85,3 +88,38 @@ fi
 read -p "What's your name?" name
 ```
 
+## Function
+
+- A sample function.
+
+```shell
+# mcd.sh
+
+mcd() {
+	mkdir -p "$1"
+	cd "$1"
+}
+```
+
+Run the function in shell
+
+```shell
+source mcd.sh
+mcd test
+```
+
+- Access the i-th argument: `$i`
+
+## Techniques
+
+### Special $
+
+- `$(date)`: show the current date
+- `$0`: script name
+
+- `$1, ..., \$9`: command-line arguments
+
+- `$#`: number of arguments
+- `$$`: process id
+- `$@`: all the arguments
+- `$?`: find the return value of the last executed command 

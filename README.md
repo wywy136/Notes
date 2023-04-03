@@ -1,4 +1,4 @@
-# Study-scripts
+# Study Plan of Yu Wang
 
 ## Engineering
 

@@ -164,6 +164,8 @@ Find(x):
 
 ```python
 Union(x, y):
+  x = Find(x)
+  y = Find(y)
   if x.rank > y.rank:
     y.p = x
   else:

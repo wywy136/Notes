@@ -1,4 +1,20 @@
-# Unix & Commands
+# Commands for Shell
+
+## Techniques
+
+- `$_`: access the last argument of the previous command
+
+- `sudo !!`: run the last command with sudo
+
+- Use `{}` to expand the arguments:
+
+  ```
+  touch a{1,2}/b/c{1,2}
+  -> touch a1/b/c1 a1/b/c2 a2/b/c1 a2/b/c2
+  ```
+
+- `shellckeck xxx.sh`: debug the shell script
+- `history n`: show the history commands from n-th command to the end
 
 ## Filesystem
 
@@ -215,6 +231,12 @@ Environment is the term for information that controls the behavior of the shell 
 
 - `2>file` redirect stderr
 
+- Ignore the output: write to a special device
+
+  ```
+  cat xxx > /dev/null 2> /dev/null
+  ```
+
 ### `n>>file`
 
 - appending stdout and stderr
@@ -401,5 +423,32 @@ Deleting lines
 ```sh
 sed 3d <file>  # Remove the 3rd line of the file
 sed '1,4d' <file>  # Remove lines 1-4 from the file
+```
+
+## Searching
+
+### `locate`
+
+Look for paths in the system that contains a substring
+
+## Conda Commands
+
+- Export an environment to a yml file
+
+```
+conda env export | grep -v "^prefix: " > environment.yml
+```
+
+- Create an environment from a yml file
+
+```
+conda env create -f environment.yml
+```
+
+- Update an environment from a yml file
+
+```
+conda activate myenv
+conda env update --file local.yml --prune
 ```
 
