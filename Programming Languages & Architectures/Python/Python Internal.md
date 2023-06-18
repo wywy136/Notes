@@ -677,3 +677,12 @@ Deep copy: totally new list without any dependency
 ### Argument passing
 
 DIfference between immutable arguments and mutable arguments.
+
+### Bit Operation
+
+`n >> m`: Left move m bits of binary number n: 0b01001 >> 3 = 0b01
+
+`1 << m`: Get a binary number with m-th digit 1: 1 << 3 = 0b100
+
+`bin(n)`: Get a binary number string equal to n: bin(5) = '0b101'
+
