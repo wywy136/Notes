@@ -72,6 +72,18 @@ Sorted list is a sorted mutable sequence in which the values are maintained in s
 
 ## Built-in Features
 
+### `ast`
+
+#### Converting a list represented in string format back to list 
+
+Using `ast.literal_eval() `
+
+```python
+import ast
+ini_list = "[1, 2, 3, 4, 5]"
+res = ast.literal_eval(ini_list)
+```
+
 ### `bisect`
 
 - `bisect.bisect_left()`: Locate the insertion point for *x* in *a* to maintain sorted order. The returned insertion point *i* partitions the array *a* into two halves so that `all(val < x for val in a[lo : i])` for the left side and `all(val >= x for val in a[i : hi])` for the right side.
