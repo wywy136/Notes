@@ -25,6 +25,23 @@ BFS(G, s):
         q.enqueue(u)
 ```
 
+### Simplified BFS
+
+```python
+BFS(G, s):
+    q = queue()
+    visited = set(s)
+    q.enqueue(s)
+    while q is not empty:
+        v = q.dequeue()
+        for u in v.neighbors:
+            if u not in visited:
+                visited.add(u)
+                q.enqueue(u)
+```
+
+
+
 ### DFS
 
 ```python
